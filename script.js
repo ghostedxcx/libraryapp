@@ -1,4 +1,5 @@
 let myLibrary = [];
+const formModel = document.getElementById("form-popup");
 
 //Book constructor
 function Book(title, author, pages, read) {
@@ -37,28 +38,33 @@ function displayBooks() {
 }
 
 
-//addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, true);
-
 // function to add a book to the library
 function addBookToLibrary(title, author, pages, read) {
-    let book = new Book(title, author, pages, read);
-    myLibrary.push(book);
-    displayBooks();
+    let a = document.getElementById("title").value;
+    let b = document.getElementById("author").value;
+    let c = document.getElementById("pages").value;
+    let d = document.getElementById("read").checked;
+
+    if (a !== "" && b !== "" && c !== "") {
+        myLibrary.push(new Book(a, b, c, d));
+        displayBooks();
+    }
 }
 
-addBookToLibrary("harry potter", "jk", 300, true);
-addBookToLibrary("50 shades of ass", "donkey kong", 1000, false);
 
-console.log(myLibrary[1].title);
+//addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, true);
+
+console.log(myLibrary);
 
 // functionality to open/close form
 function openForm() {
-    document.getElementById("myForm").style.display = "block";
+    document.querySelector(".hide-model").style.display = "block";
 }
 
 function closeForm() {
-    document.getElementById("myForm").style.display = "none";
+    document.querySelector(".hide-model").style.display = "none";
 }
+
 
 
 
