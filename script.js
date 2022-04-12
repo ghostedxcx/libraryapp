@@ -49,5 +49,16 @@ function addBookToLibrary(title, author, pages, read) {
 addBookToLibrary("harry potter", "jk", 300, true);
 addBookToLibrary("50 shades of ass", "donkey kong", 1000, false);
 
-console.log(myLibrary);
+console.log(myLibrary[1].title);
+
+// functionality to open/close form
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+
 
