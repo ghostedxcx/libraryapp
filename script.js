@@ -1,13 +1,34 @@
 let myLibrary = [];
-const formModel = document.getElementById("form-popup");
+
+
 
 //Book constructor
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
+
+
+
+// function to add a book to the library
+function addBookToLibrary() {
+    console.log("Add Button Clicked");
+    let title = document.getElementById("title").value;
+    let author = document.getElementById("author").value;
+    let pages = document.getElementById("pages").value;
+    let read = document.getElementById("read").checked;
+
+    let book = new Book(title, author, pages, read);
+    myLibrary.push(book);
+    displayBooks();
+}
+
+
+//addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, true);
 
 function displayBooks() {
     let table = document.getElementById("table");
@@ -36,23 +57,6 @@ function displayBooks() {
         tr.appendChild(td);
     }
 }
-
-
-// function to add a book to the library
-function addBookToLibrary(title, author, pages, read) {
-    let a = document.getElementById("title").value;
-    let b = document.getElementById("author").value;
-    let c = document.getElementById("pages").value;
-    let d = document.getElementById("read").checked;
-
-    if (a !== "" && b !== "" && c !== "") {
-        myLibrary.push(new Book(a, b, c, d));
-        displayBooks();
-    }
-}
-
-
-//addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, true);
 
 console.log(myLibrary);
 

@@ -9,17 +9,17 @@
 </head>
 <body>
     <h3 id="book-list"></h1>
-        <h3 id="title"></h3>
+        <h3 class="title"></h3>
         <table id="table"></table>
         <!-- Add a “NEW BOOK” button that brings up a form allowing users to input the details for the new book: author, title, number of pages, whether it’s been read and anything else you might want.-->
         <button class="open-button" onclick="openForm()">NEW BOOK</button>
         <div id="form-popup" class="hide-model">
             <form class="form-container">
                 <h1>Add a new book</h1>
-                <label for="author"><b>Author</b></label>
+                <label for="author"><b>Author of the book</b></label>
                 <input type="text" placeholder="Enter author" name="author" id="author" required>
-                <label for="title"><b>Title</b></label>
-                <input type="text" placeholder="Enter title" name="title" id="title" required>
+                <label for="title"><b>Title of book</b></label>
+                <input type="text" placeholder="Title" name="title" id="title" required/>
                 <label for="pages"><b>Number of pages</b></label>
                 <input type="number" placeholder="Enter number of pages" name="pages" id="pages" required>
                 <label for="read"><b>Read</b></label>
