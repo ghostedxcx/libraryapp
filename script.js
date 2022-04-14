@@ -14,6 +14,9 @@ class Book {
 
 
 
+
+
+
 // function to add a book to the library
 function addBookToLibrary() {
     console.log("Add Button Clicked");
@@ -25,6 +28,7 @@ function addBookToLibrary() {
     let book = new Book(title, author, pages, read);
     myLibrary.push(book);
     displayBooks();
+    closeForm();
 }
 
 
@@ -56,6 +60,18 @@ function displayBooks() {
         td.appendChild(button);
         tr.appendChild(td);
     }
+}
+
+function removeBook() {
+    let table = document.getElementById("table");
+    table.removeChild(table.lastChild);
+}
+
+// delete book from library
+function deleteBook(index) {
+    myLibrary.splice(index, 1);
+    removeBook();
+    displayBooks();
 }
 
 console.log(myLibrary);

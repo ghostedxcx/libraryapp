@@ -25,6 +25,7 @@
     right: 15px;
     border: 3px solid #f1f1f1;
     z-index: 9;
+    border-radius: 1.0vh;
 }
 
 .form-container {
@@ -61,10 +62,20 @@
 }
 
 .form-container .cancel {
-    background-color: red;
+    background-color: rgb(206, 78, 78);
 }
 
 .form-container .btn:hover, .open-button:hover {
     opacity: 1;
+}
+
+.header-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: #04AA6D;
+}
+
+#pages {
+    border-radius: .4vh;
 }
 
