@@ -27,6 +27,7 @@ function addBookToLibrary() {
     myLibrary.push(book);
     displayBooks();
     closeForm();
+
 }
 
 
@@ -39,6 +40,15 @@ function displayBooks() {
     let pages = document.createElement("td");
     let read = document.createElement("td");
     let button = document.createElement("button");
+    let setReadText = document.createElement("td");
+    let readIt = document.getElementById("read").checked;
+
+
+    if (readIt == true) {
+        setReadText.innerHTML = "Read";
+    } else {
+        setReadText.innerHTML = "Not Read";
+    }
 
 
     button.innerHTML = "Delete";
@@ -58,6 +68,7 @@ function displayBooks() {
         row.appendChild(pages);
         row.appendChild(read);
         row.appendChild(button);
+        row.appendChild(setReadText);
         table.appendChild(row);
     }
 }
