@@ -1,4 +1,5 @@
 let myLibrary = [];
+let length = myLibrary.length;
 
 
 
@@ -11,9 +12,6 @@ class Book {
         this.read = read;
     }
 }
-
-
-
 
 
 
@@ -33,32 +31,34 @@ function addBookToLibrary() {
 
 
 //addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, true);
-
-function displayBooks() {
+function displayBooks() { 
     let table = document.getElementById("table");
-    let tbody = document.createElement("tbody");
-    table.appendChild(tbody);
+    let row = document.createElement("tr");
+    let title = document.createElement("td");
+    let author = document.createElement("td");
+    let pages = document.createElement("td");
+    let read = document.createElement("td");
+    let button = document.createElement("button");
+
+
+    button.innerHTML = "Delete";
+    button.setAttribute("onclick", "deleteBook(" + (length - 1) + ")");
+
+
+
+
     for (let i = 0; i < myLibrary.length; i++) {
-        let tr = document.createElement("tr");
-        tbody.appendChild(tr);
-        let td = document.createElement("td");
-        td.innerHTML = myLibrary[i].title;
-        tr.appendChild(td);
-        td = document.createElement("td");
-        td.innerHTML = myLibrary[i].author;
-        tr.appendChild(td);
-        td = document.createElement("td");
-        td.innerHTML = myLibrary[i].pages;
-        tr.appendChild(td);
-        td = document.createElement("td");
-        td.innerHTML = myLibrary[i].read;
-        tr.appendChild(td);
-        td = document.createElement("td");
-        let button = document.createElement("button");
-        button.innerHTML = "Delete";
-        button.setAttribute("onclick", "deleteBook(" + i + ")");
-        td.appendChild(button);
-        tr.appendChild(td);
+        let book = myLibrary[i];
+        title.innerHTML = book.title;
+        author.innerHTML = book.author;
+        pages.innerHTML = book.pages;
+        read.innerHTML = book.read;
+        row.appendChild(title);
+        row.appendChild(author);
+        row.appendChild(pages);
+        row.appendChild(read);
+        row.appendChild(button);
+        table.appendChild(row);
     }
 }
 
