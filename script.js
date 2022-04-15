@@ -62,6 +62,7 @@ function displayBooks() {
     }
 }
 
+// create a function to remove book from table after delete button is clicked
 function removeBook() {
     let table = document.getElementById("table");
     table.removeChild(table.lastChild);
@@ -71,7 +72,6 @@ function removeBook() {
 function deleteBook(index) {
     myLibrary.splice(index, 1);
     removeBook();
-    displayBooks();
 }
 
 console.log(myLibrary);
